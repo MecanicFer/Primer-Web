@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Armas 22032</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100"> <!--Este codigo es para que el footer quede siempre abajo--> 
+    <!--Esta es la barra que aparece en la parte superior de la pagina con todos sus elementos-->
+    
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0a0a0a;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Conf Bs As</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">La conferencia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Los oradores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Lugar y fecha</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Conviertete en orador</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Comprar ticket</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <br>
+    <!--El siguiente codigo es el apartado de las tarjetas de descuento-->
+    <div class="container">
+        <div class="card-deck card-flex">
+            <div class="card-group">
+                <div class="card border-primary">
+                    <div class="card" style="width: 370px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Estudiante</h5>
+                            <p class="card-text">Tienen un descuento</p>
+                            <p><b>80%</b></p>
+                            <p class="card-text"><small class="text-muted">*presentar documentacion</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-info">
+                    <div class="card" style="width: 370px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Trainee</h5>
+                            <p class="card-text">Tienen un descuento</p>
+                            <p><b>50%</b></p>
+                            <p class="card-text"><small class="text-muted">*presentar documentacion</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-warning">
+                    <div class="card" style="width: 370px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Junior</h5>
+                            <p class="card-text">Tienen un descuento</p>
+                            <p><b>15%</b></p>
+                            <p class="card-text"><small class="text-muted">*presentar documentacion</small></p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--El siguiente codigo es el Formulario-->
+    <div class="container">
+        <p class="text-center my-2">VENTA</p>
+        <h2 class="tex-center">VALOR DEL TICKET $200</h2>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Nombre">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Apellido">
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Correo">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <label for="inputCantidad">Cantidad</label> <!--Este codigo hace que de acuerdo a la cantidad que ingreses será la cantidad que almacena el id-->
+                    <input type="text" class="form-control" placeholder="Cantidad">
+                </div>
+                    <div class="col">
+                        <label for="inputCategoria">Categoria</label>
+                        <select id="inputCategoria" class="form-control">
+                            <option value="80" selected>Estudiante</option>
+                            <option value="50">Trainee</option>
+                            <option value="15">Junior</option>
+                        </select>
+                    </div>
+                <br>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col" style="background-color: rgb(76, 198, 235);">
+                    <input type="text" id="compraTotal" class="alert alert-primari" style="width: 100;" value="Total a pagar: $" role="alert" readonly>
+                </div>
+            </div>
+            <br>    
+            <div class="row">
+                <div class="col">
+                    <button type="reset" class="btn btn-primary btn-block" style="background-color: darkgreen;">Borrar</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary btn-block" style="background-color: darkgreen;"onclick="resumir()">Resumen</button>
+                </div>
+            </div>
+            <br>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+<footer class="mt-auto">
+    <div class="container-fluid py-3">
+        <ul class="nav justify-content-center" style="background-color:rgb(2, 3, 53)">
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Preguntas<br>Frecuentes</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Contactanos</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Prensa</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Conferencia</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Terminos y<br>condiciones</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Privacidad</nav_footer>
+            </li>
+            <li class="nav-item">
+                <nav_footer class="nav-link" href="#">Estudiantes</nav_footer>
+            </li>
+        </ul>
+    </div>
+</footer>
+</html>
